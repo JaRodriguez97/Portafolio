@@ -18,14 +18,14 @@
   overflow: hidden;
 }
 
-.banner.active > .banner__content {
+.banner.active .banner__content {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-200px);
   transition-delay: 0s;
 }
 
-.banner.active > .banner__glass {
+.banner.active .banner__glass {
   width: 100%;
   backdrop-filter: blur(20px);
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
@@ -261,6 +261,15 @@
 }
 
 @media (max-width: 470px) {
+  body {
+    max-height: 95vh;
+    min-height: 95vh;
+  }
+  .banner {
+    max-height: 95vh;
+    min-height: 95vh;
+  }
+
   .banner__header {
     padding: 10px;
   }
