@@ -264,6 +264,7 @@
   body {
     max-height: 95vh;
     min-height: 95vh;
+    overflow: hidden;
   }
   .banner {
     max-height: 95vh;
