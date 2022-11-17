@@ -18,10 +18,10 @@
   overflow: hidden;
 }
 
-.banner.tour .banner__content--home,
-.banner.contact .banner__content--home,
 .banner.about .banner__content--home,
-.banner.active .banner__content--home {
+.banner.active .banner__content--home,
+.banner.contact .banner__content--home,
+.banner.tour .banner__content--home {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-200px);
@@ -35,6 +35,13 @@
   transition-delay: 1s;
 }
 
+.banner.about .banner__glass {
+  width: 40%;
+  right: 0;
+  left: auto;
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5);
+}
+
 .banner.active .banner__content--about {
   opacity: 0;
   visibility: hidden;
@@ -42,13 +49,28 @@
   transition-delay: 0s;
 }
 
-.banner.about .banner__glass {
-  width: 40%;
-  right: 0;
-  left: auto;
-  backdrop-filter: blur(20px);
-  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5);
+.banner.active .banner__content--tour {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200px);
   transition-delay: 0s;
+}
+
+.banner.contact .banner__glass {
+  width: 100%;
+  height: 45%;
+  right: auto;
+  left: auto;
+  top: 0;
+  bottom: auto;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.banner.tour:not(.active) .banner__content--tour {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+  transition-delay: 1s;
 }
 
 .banner.tour .banner__glass {
@@ -58,9 +80,7 @@
   left: auto;
   top: auto;
   bottom: 0;
-  backdrop-filter: blur(20px);
-  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5);
-  transition-delay: 0s;
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.8);
 }
 
 .banner.active .banner__glass {
@@ -116,6 +136,18 @@
 
 .banner__content--about {
   position: absolute;
+  top: -3vw;
+  left: 0;
+  transition: 500ms;
+  transition-delay: 1s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200px);
+  transition-delay: 1s;
+}
+
+.banner__content--tour {
+  position: absolute;
   top: -5vw;
   left: 0;
   transition: 500ms;
@@ -126,7 +158,25 @@
   transition-delay: 1s;
 }
 
+.banner__content--about-img {
+  position: absolute;
+  height: 70%;
+  bottom: 60%;
+  right: 1%;
+  filter: sepia(1);
+  opacity: 1;
+}
+
 .banner__content--about-title {
+  color: #fff;
+  font-size: 10vw;
+  line-height: 1em;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Dancing Script", cursive;
+  text-align: left;
+}
+
+.banner__content--tour-title {
   color: #fff;
   font-size: 10vw;
   line-height: 1em;
@@ -139,7 +189,12 @@
   color: #fff;
   font-size: 2vw;
   text-align: right;
-  /* line-height: 1em; */
+}
+
+.banner__content--tour-p {
+  color: #fff;
+  font-size: 2vw;
+  text-align: right;
 }
 
 .banner__header {
@@ -215,7 +270,7 @@
   height: 100%;
   backdrop-filter: blur(15px);
   z-index: 2;
-  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
   transition: 500ms;
   transition-delay: 1s;
 }
@@ -298,6 +353,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 /* !!! Responsive !!! */
 
 @media (max-width: 991px) {
@@ -314,11 +370,21 @@
     right: 5vw;
   }
 
+  .banner__content--about-title {
+    font-size: 15vw;
+  }
+
+  .banner__content--tour {
+    left: 5vw;
+    right: 5vw;
+  }
+
   .banner__socialM {
     bottom: 20px;
     right: 20px;
   }
 
+  .banner.about:not(.active) .banner__glass,
   .banner__glass {
     width: 50%;
   }
@@ -327,10 +393,11 @@
     font-size: 18vw;
   }
 
+  .banner__content--about-p,
+  .banner__content--tour-p,
   .banner__content--home-ligth {
     font-size: 3vw;
     letter-spacing: 2px;
-    padding: 0 5px;
   }
 }
 
@@ -353,12 +420,27 @@
   .banner__header--logo {
     font-size: 4vw;
   }
+
+  .banner__content--about-img {
+    bottom: 100%;
+    height: 60%;
+  }
+
+  .banner__content--about-p {
+    font-size: 4vw;
+  }
+
+  .banner__content--about-title {
+    font-size: 18vw;
+  }
 }
 
 @media (max-width: 340px) {
   .banner__header--logo {
     font-size: 5vw;
   }
+
+  .banner.about:not(.active) .banner__glass,
   .banner__glass {
     width: 55%;
   }
