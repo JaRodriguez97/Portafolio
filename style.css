@@ -236,6 +236,10 @@
     padding: 20px;
   }
 
+  .banner__header--logo {
+    font-size: 3vw;
+  }
+
   .banner__socialM {
     bottom: 20px;
     right: 20px;
@@ -262,11 +266,14 @@
   }
 
   .banner__header--logo {
-    font-size: 1.5em;
+    font-size: 4vw;
   }
 }
 
 @media (max-width: 340px) {
+  .banner__header--logo {
+    font-size: 5vw;
+  }
   .banner__glass {
     width: 55%;
   }
