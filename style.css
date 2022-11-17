@@ -116,21 +116,20 @@
   color: #fff;
   font-size: 10vw;
   line-height: 0.55em;
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   font-family: "Dancing Script", cursive;
   transition: 500ms;
   transition-delay: 1s;
 }
 
 .banner__content--home-ligth {
-  font-size: 0.2em;
+  font-size: 2vw;
   font-weight: 300;
-  letter-spacing: 5px;
+  letter-spacing: 0.5vw;
   background-color: #fff;
   color: #111;
   padding: 0 10px;
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
 
@@ -144,6 +143,42 @@
   visibility: hidden;
   transform: translateX(-200px);
   transition-delay: 1s;
+  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.6);
+}
+
+.banner__content--about-img {
+  position: absolute;
+  height: 70%;
+  bottom: 60%;
+  right: 1%;
+  filter: sepia(1);
+  opacity: 1;
+  border-radius: 50%;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.banner__content--about-img:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.banner__content--about-img:active {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.6);
+  transition: 100ms;
+}
+
+.banner__content--about-p {
+  color: #fff;
+  font-size: 2vw;
+  text-align: right;
+}
+
+.banner__content--about-title {
+  color: #fff;
+  font-size: 10vw;
+  line-height: 1em;
+  font-family: "Dancing Script", cursive;
+  text-align: left;
 }
 
 .banner__content--tour {
@@ -156,39 +191,15 @@
   visibility: hidden;
   transform: translateX(-200px);
   transition-delay: 1s;
-}
-
-.banner__content--about-img {
-  position: absolute;
-  height: 70%;
-  bottom: 60%;
-  right: 1%;
-  filter: sepia(1);
-  opacity: 1;
-}
-
-.banner__content--about-title {
-  color: #fff;
-  font-size: 10vw;
-  line-height: 1em;
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  font-family: "Dancing Script", cursive;
-  text-align: left;
+  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.6);
 }
 
 .banner__content--tour-title {
   color: #fff;
   font-size: 10vw;
   line-height: 1em;
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   font-family: "Dancing Script", cursive;
   text-align: left;
-}
-
-.banner__content--about-p {
-  color: #fff;
-  font-size: 2vw;
-  text-align: right;
 }
 
 .banner__content--tour-p {
@@ -202,7 +213,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 40px 100px;
+  padding: 4vw 7vw;
   z-index: 5;
   display: flex;
   justify-content: space-between;
@@ -211,7 +222,7 @@
 
 .banner__header--logo {
   position: relative;
-  font-size: 2em;
+  font-size: 2vw;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -221,13 +232,13 @@
 
 .banner__header--toggle {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 4vw;
+  height: 4vw;
   background-image: url(./assets/icons/menu.png);
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  background-size: 30px;
+  background-size: 3vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,11 +257,11 @@
 .banner__header--toggle::before {
   content: "menú";
   position: absolute;
-  right: 45px;
+  right: 4vw;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 1vw;
   padding: 2px 5px;
   background-color: #fff;
   color: #111;
@@ -304,24 +315,29 @@
   background-color: #fff;
   padding: 4px 10px;
   display: inline-block;
+  transition: 500ms;
 }
 
 .banner__navigation--li-a:hover {
   background-color: #111;
   color: #fff;
-  letter-spacing: 10px;
+  letter-spacing: 0.5vw;
   text-transform: lowercase;
+  transition: 500ms;
 }
 
 .banner__socialM {
   position: absolute;
-  bottom: 40px;
-  right: 100px;
+  bottom: 4vw;
+  right: 7vw;
   display: flex;
   z-index: 4;
 }
 
 .banner__socialM--li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
   margin: 5px;
   padding: 0 6px;
@@ -336,7 +352,7 @@
   display: inline-block;
   letter-spacing: 2px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1vw;
   text-transform: uppercase;
   transition: 500ms;
 }
@@ -358,7 +374,7 @@
 
 @media (max-width: 991px) {
   .banner__header {
-    padding: 20px;
+    padding: 3vw;
   }
 
   .banner__header--logo {
@@ -368,6 +384,10 @@
   .banner__content--about {
     left: 5vw;
     right: 5vw;
+  }
+
+  .banner__content--about-img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   }
 
   .banner__content--about-title {
@@ -380,8 +400,12 @@
   }
 
   .banner__socialM {
-    bottom: 20px;
-    right: 20px;
+    bottom: 3vw;
+    right: 3vw;
+  }
+
+  .banner__socialM--li-a {
+    font-size: 2vw;
   }
 
   .banner.about:not(.active) .banner__glass,
@@ -401,7 +425,7 @@
   }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 550px) {
   body {
     max-height: 95vh;
     min-height: 95vh;
@@ -412,13 +436,19 @@
     max-height: 95vh;
     min-height: 95vh;
   }
-
-  .banner__header {
-    padding: 10px;
-  }
-
   .banner__header--logo {
     font-size: 4vw;
+  }
+
+  .banner__header--toggle {
+    background-size: 5vw;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .banner__header--toggle::before {
+    right: 6vw;
+    font-size: 2vw;
   }
 
   .banner__content--about-img {
@@ -433,6 +463,10 @@
   .banner__content--about-title {
     font-size: 18vw;
   }
+
+  .banner__socialM--li-a {
+    font-size: 3vw;
+  }
 }
 
 @media (max-width: 340px) {
@@ -443,5 +477,20 @@
   .banner.about:not(.active) .banner__glass,
   .banner__glass {
     width: 55%;
+  }
+
+  .banner__header--toggle {
+    background-size: 7vw;
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .banner__header--toggle::before {
+    right: 10vw;
+    font-size: 3vw;
+  }
+
+  .banner__socialM--li-a {
+    font-size: 4vw;
   }
 }
