@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/menu.png"
+      type="image/x-icon"
+    />
     <title>Portafolio JR</title>
   </head>
   <body>
@@ -14,19 +19,29 @@
         <div class="banner__header--toggle" onclick="menuToggle()"></div>
       </header>
       <div class="banner__glass"></div>
-      <div class="banner__content" >
-        <h2 class="banner__content--h2" id="Home">
+      <div class="banner__content">
+        <h2 class="banner__content--home">
           Páginas webs,<br />
-          <span class="banner__content--h2-ligth"
-            >Profesionales al alcance de tu  bolsillo.</span
+          <span class="banner__content--home-ligth"
+            >Profesionales al alcance de tu bolsillo.</span
           >
         </h2>
+
+        <div class="banner__content--about">
+          <h2 class="banner__content--about-title">About</h2>
+          <p class="banner__content--about-p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum id
+            accusantium placeat officiis vero officia odio temporibus incidunt
+            debitis numquam itaque aut inventore accusamus eaque pariatur
+            quaerat, delectus minima culpa?
+          </p>
+        </div>
       </div>
       <img
         src="./assets/img/amanecer.jpg"
         class="banner__video"
         alt="amanecer"
-      ></img>
+      />
       <!-- <video
         src="./assets/video/background.mp4"
         autoplay
@@ -57,16 +72,27 @@
       </ul>
       <ul class="banner__navigation">
         <li style="--i: 1" class="banner__navigation--li">
-          <a href="#" onclick="menuToggle()" class="banner__navigation--li-a">Home</a>
+          <a href="#" onclick="getTo()" class="banner__navigation--li-a"
+            >Home</a
+          >
         </li>
         <li style="--i: 2" class="banner__navigation--li">
-          <a href="#" class="banner__navigation--li-a">About</a>
+          <a href="#" onclick="getTo('about')" class="banner__navigation--li-a"
+            >About</a
+          >
         </li>
         <li style="--i: 3" class="banner__navigation--li">
-          <a href="#" class="banner__navigation--li-a">Tour</a>
+          <a href="#" onclick="getTo('tour')" class="banner__navigation--li-a"
+            >Tour</a
+          >
         </li>
         <li style="--i: 4" class="banner__navigation--li">
-          <a href="#" class="banner__navigation--li-a">Contact</a>
+          <a
+            href="#"
+            onclick="getTo('contact')"
+            class="banner__navigation--li-a"
+            >Contact</a
+          >
         </li>
       </ul>
     </section>

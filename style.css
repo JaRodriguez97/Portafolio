@@ -18,14 +18,53 @@
   overflow: hidden;
 }
 
-.banner.active .banner__content {
+.banner.tour .banner__content--home,
+.banner.contact .banner__content--home,
+.banner.about .banner__content--home,
+.banner.active .banner__content--home {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-200px);
   transition-delay: 0s;
 }
 
+.banner.about .banner__content--about {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+  transition-delay: 1s;
+}
+
+.banner.active .banner__content--about {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200px);
+  transition-delay: 0s;
+}
+
+.banner.about .banner__glass {
+  width: 40%;
+  right: 0;
+  left: auto;
+  backdrop-filter: blur(20px);
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5);
+  transition-delay: 0s;
+}
+
+.banner.tour .banner__glass {
+  width: 100%;
+  height: 40%;
+  right: auto;
+  left: auto;
+  top: auto;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5);
+  transition-delay: 0s;
+}
+
 .banner.active .banner__glass {
+  height: 100%;
   width: 100%;
   backdrop-filter: blur(20px);
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
@@ -52,16 +91,18 @@
   transition-delay: 1s;
 }
 
-.banner__content--h2 {
+.banner__content--home {
   position: relative;
   color: #fff;
   font-size: 10vw;
   line-height: 0.55em;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   font-family: "Dancing Script", cursive;
+  transition: 500ms;
+  transition-delay: 1s;
 }
 
-.banner__content--h2-ligth {
+.banner__content--home-ligth {
   font-size: 0.2em;
   font-weight: 300;
   letter-spacing: 5px;
@@ -71,6 +112,34 @@
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
+}
+
+.banner__content--about {
+  position: absolute;
+  top: -5vw;
+  left: 0;
+  transition: 500ms;
+  transition-delay: 1s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200px);
+  transition-delay: 1s;
+}
+
+.banner__content--about-title {
+  color: #fff;
+  font-size: 10vw;
+  line-height: 1em;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Dancing Script", cursive;
+  text-align: left;
+}
+
+.banner__content--about-p {
+  color: #fff;
+  font-size: 2vw;
+  text-align: right;
+  /* line-height: 1em; */
 }
 
 .banner__header {
@@ -240,6 +309,11 @@
     font-size: 3vw;
   }
 
+  .banner__content--about {
+    left: 5vw;
+    right: 5vw;
+  }
+
   .banner__socialM {
     bottom: 20px;
     right: 20px;
@@ -249,11 +323,11 @@
     width: 50%;
   }
 
-  .banner__content--h2 {
+  .banner__content--home {
     font-size: 18vw;
   }
 
-  .banner__content--h2-ligth {
+  .banner__content--home-ligth {
     font-size: 3vw;
     letter-spacing: 2px;
     padding: 0 5px;
@@ -266,6 +340,7 @@
     min-height: 95vh;
     overflow: hidden;
   }
+
   .banner {
     max-height: 95vh;
     min-height: 95vh;
