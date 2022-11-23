@@ -18,6 +18,14 @@
   overflow: hidden;
 }
 
+.banner.tour:not(.active) {
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
 .banner.about .banner__content--home,
 .banner.active .banner__content--home,
 .banner.contact .banner__content--home,
@@ -56,34 +64,33 @@
   transition-delay: 0s;
 }
 
-.banner.contact .banner__glass {
+.banner.contact:not(.active) .banner__glass {
   width: 100%;
   height: 45%;
   right: auto;
   left: auto;
-  top: 0;
-  bottom: auto;
+  top: auto;
+  bottom: 50%;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 .banner.tour:not(.active) .banner__content--tour {
   opacity: 1;
   visibility: visible;
-  transform: translateX(0px);
+  transform: translateX(-12%);
   transition-delay: 1s;
 }
 
 .banner.tour .banner__glass {
   width: 100%;
-  height: 40%;
   right: auto;
   left: auto;
-  top: auto;
-  bottom: 0;
+  top: 50%;
   box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.8);
 }
 
 .banner.active .banner__glass {
+  top: 0;
   height: 100%;
   width: 100%;
   backdrop-filter: blur(20px);
@@ -122,14 +129,9 @@
   transition-delay: 1s;
 }
 
-.banner__content--home-ligth {
+.banner__content--home-span {
   font-size: 2vw;
-  font-weight: 300;
   letter-spacing: 0.5vw;
-  background-color: #fff;
-  color: #111;
-  padding: 0 10px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
 
@@ -149,7 +151,7 @@
 .banner__content--about-img {
   position: absolute;
   height: 70%;
-  bottom: 60%;
+  bottom: 70%;
   right: 1%;
   filter: sepia(1);
   opacity: 1;
@@ -194,18 +196,30 @@
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.6);
 }
 
-.banner__content--tour-title {
-  color: #fff;
-  font-size: 10vw;
-  line-height: 1em;
-  font-family: "Dancing Script", cursive;
-  text-align: left;
+.banner__content--tour-container {
+  position: relative;
+  display: grid;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  padding: 50px 0;
+  transform-style: preserve-3d;
 }
 
 .banner__content--tour-p {
   color: #fff;
   font-size: 2vw;
   text-align: right;
+  width: max-content;
+}
+
+.banner__content--tour-title {
+  color: #fff;
+  font-size: 10vw;
+  line-height: 1em;
+  font-family: "Dancing Script", cursive;
+  text-align: left;
 }
 
 .banner__header {
@@ -278,7 +292,7 @@
   top: 0;
   left: 0;
   width: 40%;
-  height: 100%;
+  height: 100vh;
   backdrop-filter: blur(15px);
   z-index: 2;
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
@@ -327,7 +341,7 @@
 }
 
 .banner__socialM {
-  position: absolute;
+  position: fixed;
   bottom: 4vw;
   right: 7vw;
   display: flex;
@@ -362,12 +376,65 @@
 }
 
 .banner__video {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.container__box {
+  position: relative;
+  width: 450px;
+  height: 250px;
+  margin: 60px;
+  background: #000;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.container__box:hover {
+  box-shadow: 0 50px 80px rgba(0, 0, 0, 0.2);
+}
+
+.container__box:hover .container__box--contentBox {
+  transform: translateZ(50px) scaleY(1);
+}
+
+.container__box--imgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container__box--imgBox-img {
+  height: 100%;
+  width: 100%;
+}
+
+.container__box--contentBox {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  background-color: #fff;
+  transform: translateZ(20px) scaleY(0);
+  padding: 40px 25px;
+  transform-origin: top;
+  transition: 500ms;
+  transform-style: preserve-3d;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ligth {
+  background-color: #fff;
+  color: #111;
+  padding: 0 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
 }
 
 /* !!! Responsive !!! */
@@ -419,7 +486,7 @@
 
   .banner__content--about-p,
   .banner__content--tour-p,
-  .banner__content--home-ligth {
+  .banner__content--home-span {
     font-size: 3vw;
     letter-spacing: 2px;
   }
@@ -453,7 +520,7 @@
 
   .banner__content--about-img {
     bottom: 100%;
-    height: 60%;
+    height: 50%;
   }
 
   .banner__content--about-p {
