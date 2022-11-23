@@ -9,7 +9,7 @@ let anteriorRoute,
 function menuToggle() {
   banner.classList.toggle("active");
   toggleMenu.classList.toggle("active");
-  glass.style.height = `100%`;
+  // glass.style.height = `100%`;
 }
 
 function getTo(route) {
@@ -18,7 +18,7 @@ function getTo(route) {
   if (anteriorRoute) banner.classList.remove(anteriorRoute);
   if (route) banner.classList.toggle(route);
 
-  if (route == "tour" && window.innerHeight > 600)
+  if (route == "tour")
     glass.style.height = `${container.clientHeight + socialM.clientHeight}px`;
 
   anteriorRoute = route;
