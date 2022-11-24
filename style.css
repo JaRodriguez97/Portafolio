@@ -504,7 +504,6 @@
 
 @media (max-width: 550px) {
   body {
-    /**/
     max-height: 95vh;
     min-height: 95vh;
     overflow: hidden;
@@ -540,6 +539,21 @@
     font-size: 18vw;
   }
 
+  .banner__socialM--li-a {
+    font-size: 3vw;
+  }
+
+  .banner__content--tour-title {
+    font-size: 15vw;
+  }
+
+  .banner__content--tour-p {
+    height: max-content;
+    width: 100%;
+    word-break: break-word;
+    font-size: 3vw;
+  }
+
   /* .container__box--imgBox {
     width: 100%;
     height: 100%;
@@ -566,10 +580,6 @@
 
   .container__box--contentBox-p {
     font-size: 2vh;
-  }
-
-  .banner__socialM--li-a {
-    font-size: 3vw;
   }
 }
 
