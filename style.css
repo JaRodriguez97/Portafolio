@@ -187,7 +187,7 @@
   visibility: hidden;
   transform: translateX(-200px);
   transition-delay: 1s;
-  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.6);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 }
 
 .banner__content--tour-container {
@@ -466,6 +466,7 @@
 
   .banner__content--tour {
     transform: translateX(0) !important;
+    /* text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8); */
   }
 
   .banner__content--tour-container {
