@@ -522,8 +522,15 @@
     font-size: 4vw;
   }
 
+  .banner__header--toggle {
+    width: 6vw;
+    height: 6vw;
+    background-size: 7vw;
+  }
+
   .banner__header--toggle::before {
-    font-size: 2vw;
+    right: 7vw;
+    font-size: 3vw;
   }
 
   .banner__content--about-img {
