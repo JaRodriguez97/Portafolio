@@ -466,7 +466,6 @@
 
   .banner__content--tour {
     transform: translateX(0) !important;
-    top: -5%;
   }
 
   .banner__content--tour-container {
