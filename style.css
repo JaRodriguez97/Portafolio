@@ -89,6 +89,15 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
+.banner.contact .banner__socialM {
+  position: relative;
+  bottom: 50%;
+  right: 50%;
+  display: flex;
+  z-index: 8;
+  transform: translate(50%, 50%);
+}
+
 .banner.tour:not(.active) .banner__content--tour {
   opacity: 1;
   visibility: visible;
