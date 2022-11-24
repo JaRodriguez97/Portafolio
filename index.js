@@ -2,7 +2,6 @@ let anteriorRoute,
   toggleMenu = document.querySelector(".banner__header--toggle"),
   box = document.querySelectorAll(".container__box"),
   glass = document.getElementById("glass"),
-  strong = document.getElementById("strong"),
   container = document.querySelector(".banner__content--tour-container"),
   socialM = document.querySelector(".banner__socialM"),
   banner = document.querySelector(".banner");
@@ -12,8 +11,6 @@ function menuToggle() {
   toggleMenu.classList.toggle("active");
   // glass.style.height = `100%`;
 }
-
-strong.innerHTML = document.documentElement.clientWidth;
 
 function getTo(route) {
   menuToggle();
