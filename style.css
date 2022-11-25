@@ -67,6 +67,7 @@
   transition-delay: 0s;
 }
 
+.banner.active .banner__socialI--li,
 .banner.active .banner__socialM--li {
   opacity: 0;
   visibility: hidden;
@@ -89,13 +90,46 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
-.banner.contact .banner__socialM {
-  position: relative;
-  bottom: 50%;
+.banner.contact:not(.active) .banner__socialI {
+  position: absolute;
+  bottom: 40%;
   right: 50%;
-  display: flex;
+  width: 35%;
+  height: 25vh;
+  gap: 30px;
   z-index: 8;
   transform: translate(50%, 50%);
+}
+
+.banner.contact:not(.active) .banner__socialI--li {
+  color: #fff;
+  cursor: pointer;
+}
+
+.banner.contact:not(.active) .banner__socialM {
+  position: absolute;
+  bottom: 60%;
+  right: 50%;
+  z-index: 8;
+  transform: translate(50%, 50%);
+}
+
+.banner.contact:not(.active) .banner__socialI--li,
+.banner.contact:not(.active) .banner__socialM--li {
+  transition-delay: calc(0.8s * var(--i));
+}
+
+.banner.contact .banner__socialI--li:hover,
+.banner.contact .banner__socialM--li:hover {
+  transition-delay: 0s;
+  letter-spacing: 6px;
+  border-radius: 10px;
+}
+
+.banner.contact .banner__socialM--li-a {
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 2vw;
 }
 
 .banner.tour:not(.active) .banner__content--tour {
@@ -341,6 +375,14 @@
   transition: 500ms;
 }
 
+.banner__socialI {
+  width: 0;
+  height: 0;
+  flex-direction: row;
+  display: flex;
+  position: absolute;
+}
+
 .banner__socialM {
   position: fixed;
   bottom: 4vw;
@@ -349,6 +391,18 @@
   z-index: 4;
 }
 
+.banner__socialI--li {
+  background: url("assets/icons/whatsapp.png"), #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent !important;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.banner__socialI--li,
 .banner__socialM--li {
   display: flex;
   justify-content: center;
@@ -370,6 +424,7 @@
   font-size: 1vw;
   text-transform: uppercase;
   transition: 500ms;
+  cursor: pointer;
 }
 
 .banner__socialM--li-a:hover {
