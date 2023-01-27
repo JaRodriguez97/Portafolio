@@ -477,6 +477,10 @@
   object-fit: cover;
 }
 
+a:has(.container__box) {
+  color: #000;
+}
+
 .container__box {
   position: relative;
   width: 75vh;
