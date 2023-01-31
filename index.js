@@ -9,7 +9,6 @@ let anteriorRoute,
 function menuToggle() {
   banner.classList.toggle("active");
   toggleMenu.classList.toggle("active");
-  // glass.style.height = `100%`;
 }
 
 function getTo(route) {
