@@ -145,6 +145,8 @@
   letter-spacing: 4px;
   font-weight: 500;
   font-size: 2vw;
+  width: 100%;
+  text-align: center;
 }
 
 .banner.tour:not(.active) .banner__content--tour {
@@ -229,10 +231,11 @@
 
 .banner__content--about-title {
   color: #fff;
-  font-size: 10vw;
+  font-size: 6vw;
   line-height: 1em;
   font-family: "Dancing Script", cursive;
   text-align: left;
+  transform: translateX(-130px);
 }
 
 .banner__content--tour {
@@ -501,7 +504,7 @@ a:has(.container__box) {
 }
 
 .container__box:hover .container__box--contentBox {
-  transform: translateZ(50px) scaleY(1);
+  transform: translateZ(50px) scaleY(1) translateY(100px);
 }
 
 .container__box--imgBox {
@@ -523,8 +526,8 @@ a:has(.container__box) {
   left: 50px;
   right: 50px;
   background-color: #fff;
-  transform: translateZ(20px) scaleY(0);
-  padding: 40px 25px;
+  transform: translateZ(20px) scaleY(0) translateY(-100px);
+  /* padding: 40px 25px; */
   transform-origin: top;
   transition: 500ms;
   transform-style: preserve-3d;
@@ -602,11 +605,14 @@ a:has(.container__box) {
 
   .banner__content--about-img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    height: 30vw;
+    height: 25vw;
   }
 
   .banner__content--about-title {
-    font-size: 15vw;
+    width: auto;
+    font-size: 8vw;
+    transform: translateX(0px);
+    width: 30vw;
   }
 
   .banner__content--tour {
@@ -645,7 +651,7 @@ a:has(.container__box) {
   }
 
   .container__box--contentBox {
-    transform: translateZ(50px) scaleY(1);
+    transform: translateZ(50px) scaleY(1) translateY(16px);
   }
 
   .container__box--contentBox {
@@ -701,7 +707,8 @@ a:has(.container__box) {
   }
 
   .banner__content--about-title {
-    font-size: 18vw;
+    width: auto;
+    font-size: 10vw;
   }
 
   .banner__content--tour-title {
